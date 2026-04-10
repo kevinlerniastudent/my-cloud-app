@@ -15,7 +15,7 @@ def home():
 @app.route("/greet")
 def greet():
     name = request.args.get("name", "stranger")
-    return f"<h1>Hello {name}!</h1>"
+    return f"<h1>Hello from Azure {name}!</h1>"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000) 
