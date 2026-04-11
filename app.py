@@ -1,7 +1,8 @@
 from flask import Flask, request
+import os
 
 app = Flask(__name__)
-!
+
 @app.route("/")
 def home():
     return '''
@@ -18,6 +19,6 @@ def greet():
     return f"<h1>Hello from Azure {name}!</h1>"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000) 
-
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
    
