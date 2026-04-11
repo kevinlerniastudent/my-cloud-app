@@ -18,7 +18,12 @@ def greet():
     name = request.args.get("name", "stranger")
     return f"<h1>Hello from Azure {name}!</h1>"
 
+# 👇 LÄGG DEN HÄR
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
+
+# 👇 denna ska vara sist
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     app.run(host="0.0.0.0", port=port)
-   
